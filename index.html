@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang=id>
+
+<head>
+    <title>Codeweb | Tempat berbagai template dan tutorial seputar web</title>
+    <meta charset=utf-8>
+    <meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta http-equiv=x-ua-compatible content="ie=edge">
+    <link rel=preconnect href=https://www.google.com crossorigin>
+    <link rel=preconnect href=https://fonts.google.com crossorigin>
+    <link rel=dns-prefetch href=https://www.google.com>
+    <meta property="og:site_name" content="Codeweb">
+    <meta property="og:title" content="Codeweb | Tempat berbagai template dan tutorial seputar web">
+    <meta property="og:description" content="Website tempat beli template dan belajar web programming.">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.codeweb.com/">
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+    <meta property="og:image:width" content="640">
+    <meta property="og:image:height" content="360">
+    <meta property="og:image:alt" content="Codeweb | Tempat berbagai template dan tutorial seputar web">
+    <meta itemprop=name content="Codeweb">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "WebSite",
+  "name": "Codeweb",
+  "url": "",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+    <meta content="Indonesian" name=language>
+    <meta name=theme-color content="#008080">
+    <meta name=msapplication-navbutton-color content="#008080">
+    <meta name=apple-mobile-web-app-status-bar-style content="#008080">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="css/main.min.css" rel='stylesheet'>
+    <noscript>
+        <link rel=stylesheet href="css/main.min.css">
+    </noscript>
+    <style>
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgb(255, 255, 255);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #009675;
+        }
+    </style>
+    <script type=text/javascript src="js/main.min.js" defer></script>
+
+</head>
+
+<body class=bg-light>
+    <aside x-data="{sideMenu: false, moreMenu: false}" x-show=sideMenu @sidenav.window="sideMenu = true"
+        x-transition.opacity @click.self="sideMenu = false" class="position-fixed h-100 w-100"
+        style=inset:0;background-color:rgba(34,34,34,.6);z-index:9999999;display:none>
+        <div class="w-75 bg-light h-100" x-transition.scale.origin.left x-show=sideMenu>
+            <div class="border-bottom p-3 d-flex justify-content-between">
+                <b>Codeweb</b>
+                <button aria-label=Close type=button class=close aria-label=Close @click="sideMenu = !sideMenu">
+                    <span aria-hidden=true>&#215;</span>
+                </button>
+            </div>
+            <div class=p-3>
+                <ul class="nav flex-column">
+                    <li class=nav-item>
+                        <a href="" class="nav-link text-dark"><i class="bi bi-house-door"></i>
+                            Home</a>
+                    </li>
+                    <li class="nav-item dropdown" x-data="{ open: false }">
+                        <a class="nav-link dropdown-toggle" href="#" @click="open = !open" data-turbolinks=false><i
+                                class="bi bi-gear"></i> Tools</a>
+                        <div class="dropdown-menu position-absolute" x-show=open x-transition.scale.origin.top
+                            @click.away="open = false">
+                            <a class=dropdown-item href="#">Minify</a>
+                            <a class=dropdown-item href="#">Beautifier</a>
+                        </div>
+                    </li>
+                    <li class=nav-item>
+                        <a href="#" class="nav-link text-dark"><i class="bi bi-newspaper"></i>
+                            Blog</a>
+                    </li>
+                    <li class=nav-item>
+                        <a href="#" class="nav-link text-dark"><i class="bi bi-book"></i>
+                            Template</a>
+                    </li>
+                    <li class=nav-item>
+                        <a href="#" class="nav-link text-dark"><i class="bi bi-info-square"></i>
+                            About</a>
+                    </li>
+                    <li class=nav-item>
+                        <a class="nav-link text-dark" @click="moreMenu = !moreMenu" href=#! data-turbolinks=false><i
+                                class="bi bi-three-dots-vertical"></i> More..</a>
+                    </li>
+                    <li class=nav-item x-show=moreMenu>
+                        <hr>
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+    </aside>
+    <style>
+        i#searchIcon {
+            position: absolute;
+            top: 62px;
+            right: 40px;
+        }
+    </style>
+    <aside x-data="{search: false}" x-show=search @search.window="search = true" x-transition.opacity
+        @click.self="search = false" class="position-fixed h-100 w-100"
+        style=background-color:rgba(34,34,34,.6);z-index:9999999;display:none>
+
+        <div class="container">
+            <div style="background: transparent;" class="card">
+                <div class="card-body-b">
+                    <ul style="width: 100%; margin-top: 60px;" class="dropdown-menu ">
+                        <li class="dropdown-header">Cari dari blog: <button aria-label=Close type=button class=close
+                                aria-label=Close @click="search = !search">
+                                <span class="search-box" aria-hidden=true>&#215;</span>
+                            </button>
+                        </li>
+                        <li class="dropdown-header">
+                            <form action="?" method="POST" name="">
+                                <div class="form-group"><input class="form-control" id="exampleInputKeyword3"
+                                        name="title" placeholder="Ketik dan enter"></div>
+                                <i id="searchIcon" class="bi bi-search"></i>
+                            </form>
+
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </aside>
+    <nav id=navbar-top class="navbar navbar-expand-lg navbar-dark bg-codeweb sticky-top shadow" style=z-index:1025
+        x-data>
+        <div class=container>
+            <a class="navbar-brand font-weight-bold nav-title" href="#" aria-label="Go to home"><img src="img/icon.png"
+                    class="d-inline-block align-bottom mr-1" height="30" width="30" alt=""><a
+                    class="text-light nav-title mr-3">Codetemp</a>
+            </a>
+            <div class="ml-auto order-1">
+                <button aria-label="Side Menu"
+                    class="navbar-toggler btn btn-primary border-0 p-2 rounded-circle d-inline-flex align-items-center justify-content-center"
+                    @click="$dispatch('search')"><i class="bi bi-search"></i>
+                </button>
+
+                <button
+                    class="navbar-toggler btn btn-primary border-0 p-2 rounded-circle d-inline-flex align-items-center justify-content-center"
+                    role=button @click=toggleDark() x-data="{
+                isDark: localStorage.getItem('theme') === 'dark', 
+                toggleDark(){
+                    this.isDark = !this.isDark;
+                    document.body.setAttribute('data-theme', this.isDark ? 'dark' : '');
+                    localStorage.setItem('theme', this.isDark ? 'dark' : '');
+                }
+            }">
+                    <template x-if=!isDark><i class="bi bi-moon-stars"></i>
+                    </template>
+                    <template x-if=isDark><i class="bi bi-sun"></i>
+                    </template>
+                </button>
+                <button aria-label="Side Menu" class="navbar-toggler border-0 btn btn-primary p-2 mr-1 rounded-circle"
+                    @click="$dispatch('sidenav')"><i class="bi bi-list"></i>
+                </button>
+            </div>
+            <ul class="navbar-nav mr-auto d-md-none d-none d-lg-flex">
+                <li class="nav-item nav-home active">
+                    <a class=nav-link href="#"><i class="bi bi-house-door"></i>
+                        Home</a>
+                </li>
+                <li class="nav-item  nav-home dropdown" x-data="{ open: false }">
+                    <a class="nav-link dropdown-toggle" href="#" @click="open = !open" data-turbolinks=false><i
+                            class="bi bi-gear"></i>
+                        Tools</a>
+                    <div class="dropdown-menu position-absolute" x-show=open x-transition.scale.origin.top
+                        @click.away="open = false">
+                        <a class=dropdown-item href="#">Minify</a>
+                        <a class=dropdown-item href="#">Beautifier</a>
+                    </div>
+                </li>
+                <li class="nav-item  nav-home">
+                    <a href="" class="nav-link"><i class="bi bi-newspaper"></i>
+                        Blog</a>
+                </li>
+                <li class="nav-item  nav-home">
+                    <a href="" class="nav-link"><i class="bi bi-book"></i>
+                        Template</a>
+                </li>
+                <li class="nav-item  nav-home">
+                    <a href="" class="nav-link"><i class="bi bi-info-square"></i>
+                        About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <header class="jumbotron jumbotron-fluid bg-dark text-white m-0">
+        <div class=container>
+            <div class=row>
+                <div class="col-lg-6 col-md-8 py-lg-5 mx-auto text-center text-lg-center">
+                    <h1 class="display-4 font-weight-bold">Codeweb</h1>
+                    <p class=lead>Tempat berbagai <strong class=font-weight-bold>Template dan tutorial</strong> seputar
+                        web.</p>
+                    <div style="margin: auto;" class="container">
+                        <input type="text" name="" class="form-control" id=""
+                            placeholder="Search a tools,tutorial,template">
+                    </div>
+
+
+                    <div class=mt-4>
+                        <a href=/tutorial/ class="btn btn-success mr-2">Explor Random</a>
+                        <a href=#newsletter-opt-in class="btn btn-outline-light" data-turbolinks=false>
+                            Sign & Join</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container py-5">
+        <div class="row mb-5">
+            <div class="col-md-12 text-center text-lg-left">
+                <p class=lead>Apa aja sih yang baru di Codeweb?</p>
+            </div>
+        </div>
+        <div class=row>
+            <div class="col-md-6 col-lg-4 mb-4 d-flex">
+                <div class="card card-shadow rounded bg-white">
+                    <div class="card-body p-3">
+                        <a href="#">
+                            <picture class="card-image mb-3">
+                                <img class="lazyload rounded" src="https://ferihidayat.github.io/assets/project01.png"
+                                    alt="Tutorial Codeigniter #12: Menggunakan Quilljs Sebagai Editor Artikel">
+                            </picture>
+                        </a>
+                        <h6 class="card-title h6">
+                            <a class=text-dark href="#">Testing UI Codeweb</a>
+                        </h6>
+                        <div class="text-secondary small">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi
+                            autem at saepe ipsam. Reprehenderit optio dolorum delen …</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
